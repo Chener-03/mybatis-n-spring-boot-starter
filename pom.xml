@@ -23,9 +23,6 @@
   <modules>
     <module>mybatis-spring-boot-autoconfigure</module>
     <module>mybatis-spring-boot-starter</module>
-    <module>mybatis-spring-boot-samples</module>
-    <module>mybatis-spring-boot-starter-test</module>
-    <module>mybatis-spring-boot-test-autoconfigure</module>
   </modules>
 
   <distributionManagement>
@@ -35,7 +32,7 @@
     <!-- Maven compiler options -->
     <java.version>21</java.version>
     <java.release.version>21</java.release.version>
-
+    <maven.min-version>3.9.2</maven.min-version>
     <mybatis.version>3.5.15.4-SNAPSHOT</mybatis.version>
     <mybatis-spring.version>3.0.4.4-SNAPSHOT</mybatis-spring.version>
     <mybatis-freemarker.version>1.2.4</mybatis-freemarker.version>
@@ -86,16 +83,6 @@
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-test-autoconfigure</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-starter-test</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -204,6 +191,18 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.gaul</groupId>
+        <artifactId>modernizer-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>modernizer</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
 </project>

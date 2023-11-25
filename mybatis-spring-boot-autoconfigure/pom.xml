@@ -23,7 +23,8 @@
     <artifactId>mybatis-n-spring-boot</artifactId>
     <version>3.0.3.4-SNAPSHOT</version>
   </parent>
-  <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+
+  <artifactId>mybatis-n-spring-boot-autoconfigure</artifactId>
   <name>mybatis-spring-boot-autoconfigure</name>
 
   <contributors>
@@ -51,12 +52,12 @@
     <!-- Optional dependencies -->
     <dependency>
       <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
+      <artifactId>mybatis-n</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
+      <artifactId>mybatis-n-spring</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -68,22 +69,45 @@
       <groupId>org.mybatis.scripting</groupId>
       <artifactId>mybatis-freemarker</artifactId>
       <optional>true</optional>
+      <exclusions>
+        <exclusion>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.mybatis.scripting</groupId>
       <artifactId>mybatis-velocity</artifactId>
       <optional>true</optional>
+      <exclusions>
+        <exclusion>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.mybatis.scripting</groupId>
       <artifactId>mybatis-thymeleaf</artifactId>
       <optional>true</optional>
+      <exclusions>
+        <exclusion>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure-processor</artifactId>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
     </dependency>
 
     <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->

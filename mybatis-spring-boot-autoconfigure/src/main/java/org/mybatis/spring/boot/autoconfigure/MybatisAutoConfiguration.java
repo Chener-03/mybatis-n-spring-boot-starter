@@ -85,6 +85,7 @@ import org.springframework.util.StringUtils;
 @ConditionalOnSingleCandidate(DataSource.class)
 @EnableConfigurationProperties(MybatisProperties.class)
 @AutoConfigureAfter({ DataSourceAutoConfiguration.class, MybatisLanguageDriverAutoConfiguration.class })
+@Import(MybatisAotBeanDefinitionRegistryPostProcessor.class)
 public class MybatisAutoConfiguration implements InitializingBean {
 
   private static final Logger logger = LoggerFactory.getLogger(MybatisAutoConfiguration.class);
@@ -270,8 +271,7 @@ public class MybatisAutoConfiguration implements InitializingBean {
       // for spring-native
       boolean injectSqlSession = environment.getProperty("mybatis.inject-sql-session-on-mapper-scan", Boolean.class,
           Boolean.TRUE);
-      if (injectSqlSession && this.beanFactory instanceof ListableBeanFactory) {
-        ListableBeanFactory listableBeanFactory = (ListableBeanFactory) this.beanFactory;
+      if (injectSqlSession && this.beanFactory instanceof ListableBeanFactory listableBeanFactory) {
         Optional<String> sqlSessionTemplateBeanName = Optional
             .ofNullable(getBeanNameForType(SqlSessionTemplate.class, listableBeanFactory));
         Optional<String> sqlSessionFactoryBeanName = Optional

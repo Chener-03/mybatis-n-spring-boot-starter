@@ -1,0 +1,8 @@
+org.springframework.aot.hint.RuntimeHintsRegistrar=\
+  org.mybatis.spring.boot.autoconfigure.MyBatisAotRuntimeHintsRegistrar
+
+org.springframework.beans.factory.aot.BeanFactoryInitializationAotProcessor=
+
+org.springframework.beans.factory.aot.BeanRegistrationAotProcessor=
+
+org.springframework.beans.factory.aot.BeanRegistrationExcludeFilter=

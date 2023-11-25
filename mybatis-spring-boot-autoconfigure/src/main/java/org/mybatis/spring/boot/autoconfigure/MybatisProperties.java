@@ -34,9 +34,11 @@ import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.TypeHandler;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.PropertyMapper;
+import org.springframework.core.NativeDetector;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.util.StringUtils;
 
 /**
  * Configuration properties for MyBatis.
@@ -214,6 +216,9 @@ public class MybatisProperties {
 
   private Resource[] getResources(String location) {
     try {
+      if (NativeDetector.inNativeImage() && StringUtils.hasText(location) && !location.startsWith("**/")){
+        location = "**/" + location;
+      }
       return resourceResolver.getResources(location);
     } catch (IOException e) {
       return new Resource[0];
