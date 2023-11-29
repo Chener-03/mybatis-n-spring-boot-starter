@@ -77,12 +77,12 @@
       </dependency>
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+        <artifactId>mybatis-n-spring-boot-autoconfigure</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <artifactId>mybatis-n-spring-boot-starter</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

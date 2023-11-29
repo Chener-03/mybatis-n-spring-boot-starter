@@ -25,7 +25,7 @@
   </parent>
 
   <artifactId>mybatis-n-spring-boot-autoconfigure</artifactId>
-  <name>mybatis-spring-boot-autoconfigure</name>
+  <name>mybatis-n-spring-boot-autoconfigure</name>
 
   <contributors>
     <contributor>
